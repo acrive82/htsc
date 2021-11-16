@@ -127,11 +127,11 @@ async function registerAndEnrollUser (caClient, wallet, orgMspId, userId, affili
  * Enroll an admin user for Org1
  */
 async function getAdmin(){
-  let ccp = buildCCPOrg1()
+  let ccp = helper.buildCCPOrg1()
 
   // build an instance of the fabric ca services client based on
   // the information in the network configuration
-  const caClient = buildCAClient(FabricCAServices, ccp, 'ca.org1.example.com');
+  const caClient = helper.buildCAClient(FabricCAServices, ccp, 'ca.org1.example.com');
       
   // setup the wallet to hold the credentials of the application user
   const wallet = await buildWallet(Wallets, walletPath);  
